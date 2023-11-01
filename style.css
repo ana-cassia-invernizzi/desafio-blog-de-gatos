@@ -1,0 +1,287 @@
+:root {
+  font-size: 62.5%;
+  --White: #fff;
+  --White-200: #F4FCFF;
+  --Gray-700: hsl(240, 6%, 13%);
+  --Gray-800: hsl(240, 5%, 7%);
+  --Blue-200: hsl(195, 91%, 25%);
+  --Blue-300: hsl(195, 91%, 25%);
+  --Blue-background: #387E96;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+input,
+button,
+a {
+  font-family: 'Mulish', sans-serif;
+}
+
+.centralize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(112rem, 100%);
+  margin-inline: auto;
+}
+
+header {
+  grid-area: header;
+  background: var(--Blue-200);
+  padding: 1.2rem 2.8rem;
+}
+
+header .centralize {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+header .centralize .logo {
+  border-radius: 9999px;
+  background: var(--White-200);
+  width: 4.2rem;
+  height: 4.2rem;
+  padding: .8rem;
+}
+
+header .centralize img:nth-child(3) {
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 999px;
+}
+
+header .centralize form {
+  flex: 1;
+}
+
+header .centralize form input {
+  width: 100%;
+  padding: 1.2rem 1.6rem 1.2rem 1.4rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.20);
+  border: 0;
+}
+
+header .centralize form label {
+  width: 1;
+  overflow: hidden;
+  position: absolute;
+  opacity: 0;
+}
+
+header .centralize form input::placeholder {
+  color: var(--White);
+  font-size: 1.6rem;
+  line-height: 100%;
+  font-style: normal;
+}
+
+main {
+  grid-area: main;
+}
+
+main .centralize {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.4rem;
+  animation: mainAnim 1s backwards;
+  transition: 1s all ease-in;
+}
+
+main .centralize img {
+  width: min(800px, 100%);
+  border-radius: 5px;
+  object-fit: contain;
+  display: block;
+}
+
+main .centralize .sub-centralize {
+  display: flex;
+  flex-direction: column;
+  gap: 3.1rem;
+  min-width: 3.8rem;
+  max-width: 80rem;
+  padding-inline: 2.2rem;
+}
+
+main .centralize .sub-centralize .box-title {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  margin-top: 3.1rem;
+}
+
+main .centralize .sub-centralize .box-title h2 {
+  color: var(--Gray-700);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+main .centralize .sub-centralize .box-icons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+main .centralize .sub-centralize .box-icons img {
+  width: 4rem;
+  height: 4rem;
+  padding: 1.2rem;
+  background-color: var(--Blue-300);
+  color: var(--White);
+  border-radius: 999px;
+}
+
+main .centralize .sub-centralize p {
+  color: var(--Gray-800);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+section {
+  grid-area: section;
+}
+
+section .centralize {
+  margin-bottom: 3.9rem;
+  justify-content: start;
+  align-items: start;
+}
+
+section .centralize .sub-centralize {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 2.2rem;
+  width: 38rem;
+  gap: 3.2rem;
+  animation: cardsANIM 1s forwards;
+  transition: 300ms all ease;
+}
+
+section .centralize .sub-centralize h3 {
+  color: var(--Gray-700);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+section .centralize .sub-centralize .cards {
+  --delay: 1s;
+  display: flex;
+  gap: 1.6rem;
+  opacity: 0;
+  animation: cardsANIMCamp 1s forwards;
+  transition: 3s all ease-out;
+  animation-delay: var(--delay);
+}
+
+section .centralize .sub-centralize .cards img {
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+section .centralize .sub-centralize .cards .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section .centralize .sub-centralize .cards .info span {
+  color: var(--Gray-700);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+section .centralize .sub-centralize .cards .info p {
+  color: var(--Gray-800);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+footer {
+  grid-area: footer;
+  background: var(--Blue-background);
+  color: var(--White);
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.6rem;
+
+}
+
+@media (min-width:800px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "main section"
+      "footer footer";
+  }
+
+  main {
+    margin-top: 4.4rem;
+    padding: 2px;
+  }
+
+  main .centralize {
+    align-items: flex-end;
+  }
+
+  main .centralize .sub-centralize {
+    padding-inline: 0;
+  }
+
+  main .centralize .sub-centralize .box-title {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  section {
+    margin-top: 4.4rem;
+  }
+}
+
+@keyframes cardsANIM {
+  from {
+    transform: translateY(-500px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes cardsANIMCamp {
+  from {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes mainAnim {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
